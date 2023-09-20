@@ -1,0 +1,45 @@
+<div class="card">
+	<div class="card-body"  >
+  
+	</div>
+	<div class="card-body" id="cabecalho">
+	  <h2 style="float: left;" id="titulo">Estados</h2>
+	  <div style="float: right;">
+		<button type="button" class="btn btn-primary" routerLink="../form">
+		  Novo
+		</button>
+	  </div>
+	</div>
+  </div>
+  <div class="col-12" >
+	  <div class="card recent-sales overflow-auto">
+		<div class="card-body">
+		  <table class="table table-borderless datatable">
+			<thead align="center">
+			  <tr>
+				<th scope="col">#</th>
+				<th scope="col">Nome estado</th>
+				<th scope="col">Editar</th>
+				<th scope="col">Excluir</th>
+			  </tr>
+			</thead>
+			<tbody align="center">
+			  <tr *ngFor="let Estado of dados;">
+				<th scope="row"><a href="#">#1</a></th>
+				<td>{{ Estado.nomeEstado}}</td>
+				<td>
+				  <button class="btn btn-warning">
+					<i class="bi bi-pencil-square" id="editar" (click)="editarEst(Estado.indice)"></i>
+				  </button>
+				</td>
+				<td>
+				  <button class="btn btn-danger">
+					<i class="bi bi-x-circle-fill" id="excluir" (click)="excluirEst(Estado.indice)" ></i>
+				  </button>
+				</td>
+			  </tr>
+			</tbody>
+		  </table>
+		</div>
+	  </div>
+  </div>

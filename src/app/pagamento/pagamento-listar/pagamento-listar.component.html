@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="col-12 pagetitle">
+        <div class="pagamento-header">
+            <h1>Pagamento</h1>
+            <button mat-flat-button color="primary" routerLink="../form">Novo</button>
+        </div>
+    </div>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th scope="col">tipo pagamento</th>
+				<th scope="col">Editar</th>
+				<th scope="col">Excluir</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let pagamento of dados;">
+				<td>{{ pagamento.tipoPagamento }}</td>
+				<td>
+					<i class="bi bi-pencil-square" (click)="editar(pagamento.indice)"></i>
+				</td>
+				<td>
+					<i class="bi bi-trash3" (click)="excluir(pagamento.indice)"></i>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

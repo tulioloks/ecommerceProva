@@ -1,0 +1,34 @@
+<div class="card">
+    <div class="col-12 pagetitle">
+        <div class="subcategoria-header">
+            <h1>Subcategoria</h1>
+            <button mat-flat-button color="primary" routerLink="../form">Novo</button>
+        </div>
+    </div>
+    <!-- Table with hoverable rows -->
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Excluir</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let subcategoria of dados">
+                <th scope="row">1</th>
+                <td>{{ subcategoria.descricao }}</td>
+                <td>{{ subcategoria.categoria }} </td>
+                <td>
+                    <span class="bi bi-pencil-square" (click)="editar(subcategoria.indice)"></span>
+                </td>
+                <td>
+                    <span class="bi bi-trash" (click)="excluir(subcategoria.indice)"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- End Table with hoverable rows -->
+</div>

@@ -1,0 +1,41 @@
+<div class="card">
+	<div class="col-12 pagetitle">
+        <div class="pedido-header">
+            <h1>Pedido</h1>
+        </div>
+    </div>
+	<form class="row g-3" id="form">
+		<div>
+            <label for="descricao" class="form-label">Descrição</label>
+			<input type="text" class="form-control" name="descricao" id="descricao" [(ngModel)]="descricao">
+			<br>
+			<label for="cliente" class="form-label">Cliente</label>
+			<select class="form-control" [(ngModel)]="cliente" name="cliente">
+				<option *ngFor="let cliente of clientes" [value]="cliente.indice" [innerHTML]="cliente.nome">
+				</option>
+			</select>
+			<br>
+            <label for="produto" class="form-label">Produto</label>
+			<select class="form-control" [(ngModel)]="produto" name="produto">
+				<option *ngFor="let produto of produtos" [value]="produto.indice" [innerHTML]="produto.nome">
+				</option>
+			</select>
+			<br>
+           <!-- <label for="quantidade" class="form-label">Quantidade</label>
+			<input type="number" class="form-control" name="quantidade" id="quantidade" [(ngModel)]="quantidade">
+			<br>
+            <label for="valor" class="form-label">Valor</label>
+			<input type="range" class="form-control" name="valor" id="valor" [(ngModel)]="valor">
+			<br>-->
+            <label for="pagamento" class="form-label">Pagamento</label>
+			<select class="form-control" [(ngModel)]="pagamento" name="pagamento">
+				<option *ngFor="let pagamento of pagamentos" [value]="pagamento.indice" [innerHTML]="pagamento.descricao">
+				</option>
+			</select>
+		</div>
+	</form>
+	<div id="button-pedido">
+		<button mat-flat-button color="primary" id="botao" [routerLink]="['/pedido/listar']" (click)="salvar()">Salvar</button>
+		<button mat-flat-button color="warn" [routerLink]="['/pedido/listar']"  id="botao">Cancelar</button>
+	</div>
+</div>

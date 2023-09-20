@@ -1,0 +1,44 @@
+<div class="card">
+    <div class="col-12 pagetitle">
+        <div class="produto-header">
+            <h1>Produto</h1>
+        </div>
+    </div>
+    <form  class="row g-3" id="form">
+        <div class="col-12">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" [(ngModel)]="nome" name="nome" id="nome">
+        </div>
+        <br>
+        <div class="col-12">
+            <label for="nome" class="form-label">Preço</label>
+            <input type="text" class="form-control" [(ngModel)]="preco" name="preco" id="preco">
+        </div>
+        <br>
+        <div class="col-12">
+            <label for="nome" class="form-label">Descrição</label>
+            <textarea class="form-control" [(ngModel)]="descricao" name="descricao" id="descricao"></textarea>
+        </div>
+        <br>
+        <div class="col-12">
+            <label for="categoria" class="form-label">Categoria</label>
+            <select class="form-control" [(ngModel)]="categoria" name="categoria"
+                (change)="listarSubcategoria(categoria)">
+                <option *ngFor="let categoria of categorias" [value]="categoria.indice"
+                    [innerHTML]="categoria.descricao"></option>
+            </select>
+        </div>
+        <br>
+        <div class="col-12">
+            <label for="categoria" class="form-label">Subcategoria</label>
+            <select [disabled]="is_desabilidado" class="form-control" [(ngModel)]="subcategoria" name="subcategoria">
+                <option *ngFor="let subcategoria of subcategorias" [value]="subcategoria.indice"
+                    [innerHTML]="subcategoria.descricao"></option>
+            </select>
+        </div>
+    </form>
+    <div id="container">
+        <button mat-flat-button color="primary" id="botao" [routerLink]="['/produto/listar']" (click)="salvar()">Salvar</button>
+        <button mat-flat-button color="warn" [routerLink]="['/produto/listar']"  id="botao">Cancelar</button>
+      </div>
+</div>

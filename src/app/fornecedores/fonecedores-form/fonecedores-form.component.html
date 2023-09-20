@@ -1,0 +1,94 @@
+<div style="display: flex; justify-content: right">
+    <button class="btn btn-success" (click)="salvarForn()">
+      <span class="bi bi-check"></span>
+      Salvar
+    </button>
+  </div>
+  
+  <form class="row g-3">
+    <div class="col-12">
+      <label class="form-label">Estado</label>
+      <select class="form-control" [(ngModel)]="estados" name="estado">
+        <option
+          *ngFor="let estado of estados"
+          [value]="estado.indice"
+          [innerHTML]="estado.nomeEstado"
+        ></option>
+      </select>
+      <br />
+      <label for="descricao" class="form-label">NomeFantasia</label>
+      <input
+        type="text"
+        class="form-control"
+        name="nome"
+        id="nome"
+        [(ngModel)]="nome"
+      />
+  
+      <label for="logadouro" class="form-label">Logradouro</label>
+      <input
+        type="text"
+        class="form-control"
+        name="logradouro"
+        id="logradouro"
+        [(ngModel)]="logradouro"
+      />
+      <label for="razaoSocial" class="form-label">Razão social</label>
+      <input
+        type="text"
+        class="form-control"
+        name="razaoSocial"
+        id="razaoSocial"
+        [(ngModel)]="razaoSocial"
+      />
+      <label for="complemento" class="form-label">Complemento</label>
+      <input
+        type="text"
+        class="form-control"
+        name="complemento"
+        id="complemento"
+        [(ngModel)]="complemento"
+      />
+      <label for="cnpj" class="form-label">CNPJ</label>
+      <input
+        type="text"
+        class="form-control"
+        name="cnpj"
+        id="cnpj"
+        [(ngModel)]="cnpj"
+      />
+      <label for="bairro" class="form-label">Bairro</label>
+      <input
+        type="text"
+        class="form-control"
+        name="bairro"
+        id="bairro"
+        [(ngModel)]="bairro"
+      />
+      <label for="contato" class="form-label">Contato</label>
+      <input
+        type="text"
+        class="form-control"
+        name="contato"
+        id="contato"
+        [(ngModel)]="contato"
+      />
+      <label for="cidade" class="form-label">Cidade</label>
+      <input
+        type="text"
+        class="form-control"
+        name="cidade"
+        id="cidade"
+        [(ngModel)]="cidade"
+      />
+      <label for="email" class="form-label">E-mail</label>
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        id="email"
+        [(ngModel)]="email"
+      />
+  
+    </div>
+  </form>

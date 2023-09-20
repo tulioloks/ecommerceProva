@@ -1,0 +1,37 @@
+<div class="card">
+    <div class="col-12 pagetitle">
+        <div class="cliente-header">
+            <h1>Cliente</h1>
+        </div>
+    </div>
+    <form  class="row g-3" id="form">
+        <div class="col-12">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" [(ngModel)]="nome" name="nome" id="nome" required>
+        </div>
+        <br>
+        <div class="col-12">
+            <label for="cpf" class="form-label">CPF</label>
+            <input type="text" class="form-control" [(ngModel)]="cpf" name="cpf" id="cpf" required>
+        </div>
+        <br>
+        <div class="col-12">
+            <label for="dataNascimento" class="form-label">Data de Nascimento</label>
+            <input type="date" class="form-control" [(ngModel)]="dataNascimento" name="dataNascimento" id="dataNascimento" required>
+        </div>
+        <br>
+        <div class="col-12">
+            <label for="celular" class="form-label">Celular</label>
+            <input type="tel" class="form-control" [(ngModel)]="celular" name="celular" id="celular" required>
+        </div>
+        <br>
+        <div class="col-12">
+            <label for="email" class="form-label">E-Mail</label>
+            <input type="email" class="form-control" [(ngModel)]="email" name="email" id="email" required>
+        </div>
+    </form>
+    <div id="container">
+        <button mat-flat-button color="primary" id="botao" [routerLink]="['/cliente/listar']" (click)="salvar()">Salvar</button>
+        <button mat-flat-button color="warn" [routerLink]="['/cliente/listar']"  id="botao">Cancelar</button>
+      </div>
+</div>

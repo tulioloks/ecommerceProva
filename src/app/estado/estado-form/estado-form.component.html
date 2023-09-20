@@ -1,0 +1,13 @@
+ <!-- Multi Columns Form -->
+ <div class="card">
+    <form class="descricaoForm" style="margin: 10%;">
+      <div>
+        <label class="form-label" >Nome estado</label>
+        <input type="text" class="form-control"  id="nomeEstado" [(ngModel)]="nomeEstado" name="nomeEstado">
+      </div>
+      <div class="text-center">
+        <button type="button" class="btn btn-primary" style="margin: 10px;" (click)="salvarEstado()" >Salvar</button>
+        <button type="button" class="btn btn-danger" [routerLink]="['/estado/listar']">Cancelar</button>
+      </div>
+    </form><!-- End Multi Columns Form -->
+  </div>

@@ -1,0 +1,17 @@
+<div class="card">
+	<div class="col-12 pagetitle">
+		<div class="pagamento-header">
+			<h1>Pagamento</h1>
+		</div>
+	</div>
+	<form class="row g-3" id="form">
+		<div>
+			<label for="tipoPagamento" id="checkboxFrom"> Tipo de pagamento</label>
+			<input type="text" name="descricao" id="tipoPagamento" class="form-control" [(ngModel)]="tipoPagamento">
+		</div>
+	</form>
+	<div id="container">
+		<button mat-flat-button color="primary" id="botao" (click)="salvar()">Salvar</button>
+		<button mat-flat-button color="warn" [routerLink]="['/pagamento/listar']" id="botao">Cancelar</button>
+	</div>
+</div>

@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="col-12 pagetitle">
+        <div class="cliente-header">
+            <h1>Cliente</h1>
+            <button mat-flat-button color="primary" routerLink="../form">Novo</button>
+        </div>
+    </div>
+    <!-- Table with hoverable rows -->
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">E-Mail</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Excluir</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cliente of dados">
+                <td>{{ cliente.nome }}</td>
+                <td>{{ cliente.email }}</td>
+                <td>
+                    <span class="bi bi-pencil-square" (click)="editar(cliente.indice)"></span>
+                </td>
+                <td>
+                    <span class="bi bi-trash" (click)="excluir(cliente.indice)"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

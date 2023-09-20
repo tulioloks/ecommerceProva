@@ -1,0 +1,23 @@
+<div class="card">
+	<div class="col-12 pagetitle">
+        <div class="subcategoria-header">
+            <h1>Subcategoria</h1>
+        </div>
+    </div>
+	<form class="row g-3" id="form">
+		<div>
+			<label for="categoria" class="form-label">Categoria</label>
+			<select class="form-control" [(ngModel)]="categoria" name="categoria">
+				<option *ngFor="let categoria of categorias" [value]="categoria.indice" [innerHTML]="categoria.descricao">
+				</option>
+			</select>
+			<br />
+			<label for="descricao" class="form-label">Subcategoria</label>
+			<input type="text" class="form-control" name="descricao" id="descricao" [(ngModel)]="descricao">
+		</div>
+	</form>
+	<div id="button-subcategoria">
+		<button mat-flat-button color="primary" id="botao" [routerLink]="['/subcategoria/listar']" (click)="salvar()">Salvar</button>
+		<button mat-flat-button color="warn" [routerLink]="['/subcategoria/listar']"  id="botao">Cancelar</button>
+	</div>
+</div>

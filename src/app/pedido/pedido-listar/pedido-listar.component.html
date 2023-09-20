@@ -1,0 +1,38 @@
+<div class="card">
+    <div class="col-12 pagetitle">
+        <div class="pedido-header">
+            <h1>Pedido</h1>
+            <button mat-flat-button color="primary" routerLink="../form">Novo</button>
+        </div>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Descrição</th>
+                <th scope="col">Cliente</th>
+                <th scope="col">Produto</th>
+                <!--<th scope="col">Qtd</th>
+                <th scope="col">Valor</th>-->
+                <th scope="col">Pagamento</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Excluir</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pedido of dados">
+                <td>{{ pedido.descricao }}</td>
+                <td>{{ pedido.cliente }}</td>
+                <td>{{ pedido.produto }}</td>
+                 <!--<td>{{ pedido.quantidade }}</td>
+                <td>{{ pedido.valor }}</td>-->
+                <td>{{ pedido.pagamento }}</td>
+                <td>
+                    <span class="bi bi-pencil-square" (click)="editar(pedido.indice)"></span>
+                </td>
+                <td>
+                    <span class="bi bi-trash" (click)="excluir(pedido.indice)"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

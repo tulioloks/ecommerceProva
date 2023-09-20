@@ -1,0 +1,28 @@
+<div class="card">
+	<div class="col-12 pagetitle">
+		<div class="categoria-header">
+			<h1>Categoria</h1>
+			<button mat-flat-button color="primary" routerLink="../form">Novo</button>
+		</div>
+	</div>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th scope="col">Categoria</th>
+				<th scope="col">Editar</th>
+				<th scope="col">Excluir</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let categoria of dados;">
+				<td>{{ categoria.descricao }}</td>
+				<td>
+					<i class="bi bi-pencil-square" (click)="editar(categoria.indice)"></i>
+				</td>
+				<td>
+					<i class="bi bi-trash3" (click)="excluir(categoria.indice)"></i>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
